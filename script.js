@@ -1,15 +1,27 @@
-// Mengubah background navbar saat scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.background = '#fff';
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    } else {
-        header.style.background = '#fff';
-    }
-});
+// Fungsi untuk memunculkan pesan selamat datang
+function showAlert(message) {
+    alert(message);
+}
 
-// Smooth Scroll untuk navigasi
+// Fungsi Modal (Pop-up Detail)
+function openModal(title) {
+    document.getElementById('modal').style.display = 'block';
+    document.getElementById('modal-title').innerText = title;
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Menutup modal jika user klik di luar kotak modal
+window.onclick = function(event) {
+    let modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Animasi Scroll Halus
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
