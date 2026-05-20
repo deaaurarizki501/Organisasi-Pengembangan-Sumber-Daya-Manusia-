@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSDM Mandiri | Pengembangan SDM Unggul</title>
+    <title>PSDM Mandiri | Empowering People</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,48 +14,90 @@
             <div class="logo">PSDM<span>Mandiri</span></div>
             <ul class="nav-links">
                 <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang Kami</a></li>
-                <li><a href="#services">Layanan</a></li>
+                <li><a href="#programs">Program</a></li>
+                <li><a href="#articles">Artikel</a></li>
                 <li><a href="#contact" class="btn-contact">Hubungi Kami</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Membangun Potensi Menjadi <span>Prestasi</span></h1>
-            <p>Solusi strategis untuk pengembangan kompetensi, kepemimpinan, dan budaya organisasi yang berkelanjutan.</p>
-            <a href="#services" class="cta-button">Pelajari Lebih Lanjut</a>
+            <h1>Investasi Terbaik adalah <span>SDM</span></h1>
+            <p>Kami membantu organisasi dan individu mencapai potensi maksimal melalui pelatihan berbasis data dan empati.</p>
+            <button class="cta-button" onclick="showAlert('Selamat datang! Silakan jelajahi program kami.')">Mulai Sekarang</button>
         </div>
     </section>
 
-    <section id="services" class="services">
-        <h2>Layanan Unggulan</h2>
-        <div class="service-container">
-            <div class="service-box">
-                <h3>Pelatihan & Workshop</h3>
-                <p>Program peningkatan skill teknis dan soft skills sesuai kebutuhan industri.</p>
+    <section id="programs" class="section-padding">
+        <h2 class="section-title">Program Kami</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Leadership Boot Camp</h3>
+                <p>Melatih calon pemimpin masa depan dengan metode simulasi nyata.</p>
+                <button class="btn-small" onclick="openModal('Leadership Boot Camp')">Detail</button>
             </div>
-            <div class="service-box">
-                <h3>Konsultasi Karir</h3>
-                <p>Bimbingan profesional untuk memetakan jalur karir dan potensi individu.</p>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Digital Transformation</h3>
+                <p>Kesiapan SDM dalam menghadapi era kecerdasan buatan (AI).</p>
+                <button class="btn-small" onclick="openModal('Digital Transformation')">Detail</button>
             </div>
-            <div class="service-box">
-                <h3>Asesmen Organisasi</h3>
-                <p>Evaluasi menyeluruh terhadap efektivitas dan budaya kerja tim Anda.</p>
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>Mental Health at Work</h3>
+                <p>Menjaga produktivitas dengan kesehatan mental yang stabil.</p>
+                <button class="btn-small" onclick="openModal('Mental Health at Work')">Detail</button>
             </div>
+        </div>
+    </section>
+
+    <section id="articles" class="section-padding bg-light">
+        <h2 class="section-title">Artikel Terbaru</h2>
+        <div class="grid-container">
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500" alt="Post 1">
+                <div class="blog-content">
+                    <span>15 Mei 2026</span>
+                    <h3>Cara Menghadapi Burnout di Kantor</h3>
+                    <p>Tips praktis untuk tetap produktif tanpa mengorbankan kesehatan...</p>
+                    <a href="#" class="read-more">Baca Selengkapnya →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500" alt="Post 2">
+                <div class="blog-content">
+                    <span>10 Mei 2026</span>
+                    <h3>Pentingnya Soft Skill di Era AI</h3>
+                    <p>Mengapa empati dan komunikasi tidak akan pernah tergantikan mesin...</p>
+                    <a href="#" class="read-more">Baca Selengkapnya →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <h2 class="section-title">Apa Kata Mereka?</h2>
+        <div class="testimonial-box">
+            <p>"Program PSDM Mandiri benar-benar mengubah cara tim kami berkolaborasi. Sangat direkomendasikan!"</p>
+            <h4>- Andi Pratama, CEO Startup Tech</h4>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 PSDM Mandiri. Seluruh Hak Cipta Dilindungi.</p>
+        <p>&copy; 2026 PSDM Mandiri. Dibuat dengan ❤️ untuk kemajuan SDM Indonesia.</p>
     </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Info Program</h2>
+            <p>Ini adalah detail mengenai program yang Anda pilih. Di sini Anda bisa menambahkan informasi harga, durasi, dan kurikulum.</p>
+            <button class="cta-button" onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
-</html>
+        </html>
