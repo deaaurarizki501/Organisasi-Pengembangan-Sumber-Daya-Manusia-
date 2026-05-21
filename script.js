@@ -1,32 +1,50 @@
-// Fungsi untuk memunculkan pesan selamat datang
-function showAlert(message) {
-    alert(message);
-}
+// Pastikan script jalan setelah HTML selesai dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    
+    console.log("PSDM Unggul script loaded!");
 
-// Fungsi Modal (Pop-up Detail)
-function openModal(title) {
-    document.getElementById('modal').style.display = 'block';
-    document.getElementById('modal-title').innerText = title;
-}
+    // Fitur 1: Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-// Menutup modal jika user klik di luar kotak modal
-window.onclick = function(event) {
-    let modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-// Animasi Scroll Halus
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    if(menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active'); // Kamu bisa tambahkan CSS .nav-links.active di style.css
+            alert("Menu Mobile akan terbuka! (Tambahkan CSS untuk animasi)");
         });
+    }
+
+    // Fitur 2: Menutup Modal saat klik di luar kotak
+    const overlay = document.getElementById('modalOverlay');
+    overlay.addEventListener('click', function(e) {
+        if(e.target === overlay) {
+            closeDetail();
+        }
     });
+});
+
+// Fitur 3: Fungsi Modal Detail (Dipanggil dari HTML)
+function showDetail(title, description) {
+    const overlay = document.getElementById('modalOverlay');
+    const mTitle = document.getElementById('modalTitle');
+    const mDesc = document.getElementById('modalDesc');
+
+    mTitle.innerText = title;
+    mDesc.innerText = description;
+    overlay.style.display = 'flex';
+}
+
+function closeDetail() {
+    document.getElementById('modalOverlay').style.display = 'none';
+}
+
+// Fitur 4: Navbar transparan menjadi solid saat scroll
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        nav.style.padding = '10px 0';
+        nav.style.background = '#ffffff';
+    } else {
+        nav.style.padding = '15px 0';
+    }
 });
